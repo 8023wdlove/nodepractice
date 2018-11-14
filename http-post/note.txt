@@ -1,0 +1,7 @@
+GET 数据
+req.url ------------url.parse(path,true)
+
+
+post数据接收：POST数据比GET大得多
+
+分段接收

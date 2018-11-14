@@ -1,0 +1,4 @@
+get 
+1、自定义方法
+2、querystring.parse()
+3、url.parse(路径，true)
