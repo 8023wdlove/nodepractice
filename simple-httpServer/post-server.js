@@ -5,6 +5,9 @@ const url = require('url');
 var user= {};
 http.createServer((req,res)=>{
     // GET 
+    res.writeHead(200,{
+        "Content-Type":"text/plain;charset=utf-8"
+    });
     let obj = url.parse(req.url,true);
     let path = obj.pathname;
     let param = obj.query;
