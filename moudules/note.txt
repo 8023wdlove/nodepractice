@@ -1,0 +1,23 @@
+模块化
+1、系统模块：http、querystring,url
+2、自定义模块
+3、包管理器
+
+
+
+系统模块
+
+
+
+断言： 
+
+
+
+os:各种操作信息
+crypto：加密
+Event 事件
+net 网络操作
+Path：路径
+Stream 流操作  //readFile整体读
+Timers 
+ZLIB 压缩
