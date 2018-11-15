@@ -1,7 +1,7 @@
 模块化
 1、系统模块：http、querystring,url
 2、自定义模块
-3、包管理器
+3、包管理器 nodejs package manager npm install、npm uninstall
 
 
 
