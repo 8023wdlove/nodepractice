@@ -15,7 +15,7 @@ http.createServer((req,res)=>{
     })
     req.on('end',()=>{
         const POST = querystring.parse(str);
-        console.log(path,param,POST)
+        console.log(path,param,POST,str)
         var file_name = './www'+path;
         fs.readFile(file_name,(err,data)=>{
             if(err){
