@@ -23,3 +23,7 @@ http/fs/get/post
   http://localhost:8080/rrr？act=xxx
 
   
+
+
+
+  ps:res.write() 返回的内容要么是字符串要么是 buffer
