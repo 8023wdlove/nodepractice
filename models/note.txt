@@ -6,7 +6,18 @@ ejs- 温和的
 html   <html></html>
 1、根据缩进，规定层级
 2、属性放在（） 里面，逗号分割
+3、 内容直接空个格，往后堆
+  style:有两种写法
+  1:普通写法
+  2：json 写法 
+  class:有两种写法
+  1:普通写法
+  2:[]
+简写
+    div.aa
+    div#box
 
+    div&attribute({'title':'wwww','id':'box'})
 script(a.js)
 <a href="666666">ggg</a>
 
