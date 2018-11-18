@@ -19,7 +19,7 @@ server.use(cookieParser('xiaomiao'));
 server.use('/',(req,res)=>{ // cookie 加密
     console.log(req.signedCookies);
     console.log(req.cookies);
-    res.clearCookie('user');
+    res.clearCookie('user');//删除cookie
     res.send('OK');
 })
 server.listen(8080);
