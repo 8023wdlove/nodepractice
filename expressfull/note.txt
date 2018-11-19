@@ -3,3 +3,6 @@ express
 2、cookie、session
 3、数据
 4、模板引擎
+
+
+上传 multipart/form-data
