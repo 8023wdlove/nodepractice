@@ -1,0 +1,19 @@
+数据 - 数据库
+
+mysql、oracle、sqlserver、acess、db2、fox pro
+
+mysql:
+免费、中小网站
+优点：性能非常不错
+缺点：集群、容灾稍微弱
+
+oracle：
+收费
+
+
+server 端
+数据存在 
+
+
+client端
+
