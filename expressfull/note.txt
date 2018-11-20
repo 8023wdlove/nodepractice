@@ -20,3 +20,39 @@ server.use('/',function(req,res){
 
 ------------------------------------------------------------------------------------------------------------
 consolidate - 适配模板引擎   整合模板
+
+
+consolidate 
+
+consolidate= require('consolidate')
+server.set('view engine',html)
+
+server.set('views','模板文件目录')；
+
+server.engine('html',consolidate.ejs);
+
+server.get('/',function(req,res){
+    res.render('1.ejs',{})
+})
+
+
+------------------------------------------------------------------------------------------------------------
+route 路由
+把不同的目录，对应到不同的模块
+
+xxx.com/aaa/    mod1
+xxx.com/news    mod_news
+        post        news-post
+        list        nes-list
+
+xxx.com/user    mod=user
+
+
+1\创建router
+var router = express.Router();
+2\ 把router添加到server
+server.use('/user',router)
+3\router 内部
+router.get('1.html',function(){})
+router.post('12.html',function(){})
+
