@@ -2,3 +2,14 @@ get
 1、自定义方法
 2、querystring.parse()
 3、url.parse(路径，true)
+
+
+
+
+GET数据解析
+1.自己切
+2.querystring		xxx=xx&xxx=xxx
+3.urlLib			aaa?xxx=xx&xx=12
+
+urlLib.parse(url, true);	pathname
+			query
