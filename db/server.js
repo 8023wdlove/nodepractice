@@ -7,6 +7,7 @@ const multer = require('multer'); // 解析文件上传
 const ejs = require('ejs');
 const jade = require('jade'); 
 const consolidate = require('consolidate');
+const mysql = require('mysql');
 
 var server = express();
 
