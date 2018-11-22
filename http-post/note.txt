@@ -1,7 +1,14 @@
-GET 数据
-req.url ------------url.parse(path,true)
+
+POST数据接收：POST数据比GET大得多
+
+POST很大——分段
+data	一段数据
+end	全部到达
 
 
-post数据接收：POST数据比GET大得多
+req.url	=>	'/aaa?a=12&b=5'
 
-分段接收
+obj={
+	pathname: '/aaa'
+	query: {a: 12, b: 5}
+}
