@@ -1,0 +1,3 @@
+ express 下载
+ res.setHeader('Content-Disposition','attachment;filename=1.txt');
+ res.sendFile('/Users/wangdongdong/demo/nodepractice/download/www/1.txt')
