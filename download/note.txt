@@ -1,3 +1,7 @@
  express 下载
  res.setHeader('Content-Disposition','attachment;filename=1.txt');
  res.sendFile('/Users/wangdongdong/demo/nodepractice/download/www/1.txt')
+下载实现方案
+1.a标签
+2.window.open();
+3.表单模拟
