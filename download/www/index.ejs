@@ -9,13 +9,16 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script>
     window.onload=function(){
-        // var $eleForm = $("<form method='get'></form>");
-        // $eleForm.attr("action","http://localhost:8080/1.txt");
-        // $(document.body).append($eleForm);
+        // $("#download").click(function(){     // 1
+        //     window.open("http://localhost:8080/1.txt")
         // });
-        $("#download").click(function(){
-            window.open("http://localhost:8080/1.txt")
-        });
+     $("#download").click(function(){   // 2
+        var $eleForm = $("<form method='get'></form>");
+        $eleForm.attr("action","http://localhost:8080/1.txt");
+        $(document.body).append($eleForm);
+        $eleForm.submit();
+
+     });
     }
         
 </script>
