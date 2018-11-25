@@ -8,7 +8,6 @@ server.listen(8080);
 server.engine('html',consolidate.ejs)  // 模板引擎 1、什么模板引擎 
 server.set('views','./www')   // 文件模板中在哪
 server.set('view engine','html');
-// var file_name = './www'+path;
 server.get('/index.html',(req, res)=>{
         res.render('index.ejs', {name:'王冬冬'})
     })
