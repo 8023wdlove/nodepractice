@@ -9,14 +9,13 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script>
     window.onload=function(){
-        alert(1);
-
-
-
+    $("#download").click(function(){
+    $.ajax({url:"http://localhost:8080/1.txt",success:function(result){
+        console.log(1)
+       // alert('下载成功');
+    }});
+});
     }
-
-
-
 </script>
 <body>
     <button id ='download'>下载文件</button>
