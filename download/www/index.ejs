@@ -9,15 +9,19 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script>
     window.onload=function(){
-    $("#download").click(function(){
-    $.ajax({url:"http://localhost:8080/1.txt",success:function(result){
-        console.log(1)
-       // alert('下载成功');
-    }});
-});
-    }
+//     $("#download").click(function(){
+//     // $.ajax({url:"http://localhost:8080/1.txt",success:function(result){
+//     //     console.log(1, result)
+//     //    // alert('下载成功');
+
+// var $eleForm = $("<form method='get'></form>");
+//  $eleForm.attr("action","http://localhost:8080/1.txt");
+//  $(document.body).append($eleForm);
+// });
+}
 </script>
 <body>
+    <a href="http://localhost:8080/1.txt" download="12.txt">点击下载</a>
     <button id ='download'>下载文件</button>
 </body>
 </html>

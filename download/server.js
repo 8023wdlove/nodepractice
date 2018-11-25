@@ -13,6 +13,7 @@ server.get('/index.html',(req, res)=>{
         res.render('index.ejs', {name:'王冬冬'})
     })
 server.get('/1.txt',(req,res)=>{
+    console.log(3333);
     res.setHeader('Content-Disposition','attachment;filename=1.txt');
     res.sendFile('/Users/wangdongdong/demo/nodepractice/download/www/1.txt')
 })
