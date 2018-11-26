@@ -1,0 +1,7 @@
+1、下载mysql模块（client）
+2、连接
+    var db = mysql.createConnection({host, port, user, password,database});
+3、查询
+    db.query(SQL, (err, data)=>{})
+4、SQL语句
+    增删改查
