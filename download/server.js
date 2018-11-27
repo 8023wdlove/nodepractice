@@ -12,7 +12,7 @@ server.get('/index.html',(req, res)=>{
         res.render('index.ejs', {name:'王冬冬'})
     })
 server.get('/1.txt',(req,res)=>{
-    res.setHeader('Content-Disposition','attachment;filename=1.txt');
-    res.sendFile('/Users/wangdongdong/demo/nodepractice/download/www/1.txt')
+    res.setHeader('Content-Disposition','attachment;filename=1.txt.mp3');
+    res.sendFile('/Users/dongdongwang/demo/nodep/download/www/崔天琪 - 放过.mp3')
 })
 server.use(express.static('./www'))
