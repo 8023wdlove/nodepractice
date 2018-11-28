@@ -30,6 +30,7 @@
             if (evt.lengthComputable) {
                 var percentComplete = evt.loaded / evt.total;
                 console.log(percentComplete);
+                $("#progressing").width((Math.floor(percentComplete * 100)) + "%");
                 $("#progressing").html((Math.floor(percentComplete * 100)) + "%");
             }
         }, false);
@@ -62,6 +63,27 @@
 <body>
     <a href="http://localhost:8080/1.txt" download="12.txt">点击下载</a>
     <button id ='download' data-filename='崔天琪-放过.mp3'>下载文件</button>
-    <div id="progressing"></div>
+    <div class='nav'><div id="progressing"></div></div>
+    
+
 </body>
 </html>
+<style>
+    *{
+        margin:0;
+        padding: 0;
+    }
+    .nav{
+        width:200px;
+        height:20px;
+    }
+    #progressing{
+        height:20px;
+        width:0%;
+        background: green;
+
+    }
+
+
+
+</style>
