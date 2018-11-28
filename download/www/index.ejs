@@ -57,6 +57,10 @@
         };
         req.send();
     });
+    $('#upload').click(()=>{
+        alert(22)
+
+    })
     }
         
 </script>
@@ -64,8 +68,8 @@
     <a href="http://localhost:8080/1.txt" download="12.txt">点击下载</a>
     <button id ='download' data-filename='崔天琪-放过.mp3'>下载文件</button>
     <div class='nav'><div id="progressing"></div></div>
-    
-
+    文件:<input type="file" name='file1'> <br>
+    <button id="upload">上传</button> 
 </body>
 </html>
 <style>
