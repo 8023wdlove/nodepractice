@@ -11,7 +11,7 @@ var objmulter=multer({dest:'./www/upload'}); // 上传保存路径
 server.use(objmulter.any());
 
 
-server.post('/',(req,res)=>{
+server.post('/upload',(req,res)=>{
     console.log(req.files); // 读取上传文件
     // 获取原始扩展名
     var newName=req.files[0].path+pathlib.parse(req.files[0].originalname).ext;

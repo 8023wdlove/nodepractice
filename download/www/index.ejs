@@ -58,7 +58,33 @@
         req.send();
     });
     $('#upload').click(()=>{
-        alert(22)
+        let files = Array.from(document.getElementsByName('file1'));
+        let page_url = 'http://localhost:8080/upload';
+        var req = new XMLHttpRequest();
+        req.upload.onerror=()=>{
+            alert('上传出错')
+        }
+        req.upload.onprogress=(evt)=>{
+            var percentComplete1 = evt.loaded / evt.total;
+            console.log(percentComplete1);
+            $("#progressing").width((Math.floor(percentComplete1 * 100)) + "%");
+            $("#progressing").html((Math.floor(percentComplete1 * 100)) + "%");
+
+        }
+        req.open("post", page_url, true);
+        //监听进度事件
+        let formData = new FormData();
+        files.forEach(oFile=>{
+            Array.from(oFile.files).forEach(item=>{
+                formData.append('file1',item);
+            })
+        })
+        req.send(formData);
+        req.onreadystatechange=()=>{
+            if(req.readyState === 4){
+                alert(req.status);
+            }
+        }
 
     })
     }
@@ -68,7 +94,7 @@
     <a href="http://localhost:8080/1.txt" download="12.txt">点击下载</a>
     <button id ='download' data-filename='崔天琪-放过.mp3'>下载文件</button>
     <div class='nav'><div id="progressing"></div></div>
-    文件:<input type="file" name='file1'> <br>
+    文件:<input type="file" name='file1' multipart> <br>
     <button id="upload">上传</button> 
 </body>
 </html>
