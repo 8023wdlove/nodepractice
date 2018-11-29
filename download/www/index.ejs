@@ -26,14 +26,22 @@
         var req = new XMLHttpRequest();
         req.open("get", page_url, true);
         //监听进度事件
-        req.addEventListener("progress", function (evt) {
+        // req.addEventListener("progress", function (evt) {
+        //     if (evt.lengthComputable) {
+        //         var percentComplete = evt.loaded / evt.total;
+        //         console.log(percentComplete);
+        //         $("#progressing").width((Math.floor(percentComplete * 100)) + "%");
+        //         $("#progressing").html((Math.floor(percentComplete * 100)) + "%");
+        //     }
+        // }, false);  
+        req.onprogress = function(evt){  // 进度事件
             if (evt.lengthComputable) {
                 var percentComplete = evt.loaded / evt.total;
                 console.log(percentComplete);
                 $("#progressing").width((Math.floor(percentComplete * 100)) + "%");
                 $("#progressing").html((Math.floor(percentComplete * 100)) + "%");
             }
-        }, false);
+    };
         req.responseType = "blob";
         req.onreadystatechange = function () {
             if (req.readyState === 4 && req.status === 200) {
