@@ -27,7 +27,8 @@ server.use(objmulter.any());
 server.post('/upload',(req,res)=>{
     console.log(req.files); // 读取上传文件
     // 获取原始扩展名
-    var newName=req.files[0].path+pathlib.parse(req.files[0].originalname).ext;
+    // var newName=req.files[0].path+pathlib.parse(req.files[0].originalname).ext;
+    var newName=req.files[0].destination+'/'+req.files[0].originalname;
     fs.rename(req.files[0].path,newName,(err)=>{
         if(err){
             res.send('上传失败')
