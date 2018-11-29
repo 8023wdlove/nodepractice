@@ -15,7 +15,7 @@ server.get('/index.html',(req, res)=>{
     })
 server.get('/1.txt',(req,res)=>{
     res.setHeader('Content-Disposition','attachment;filename=1.txt');
-    res.sendFile('/Users/dongdongwang/demo/nodep/download/www/崔天琪 - 放过.mp3')
+    res.sendFile('/Users/dongdongwang/demo/nodep/download/www/download/崔天琪 - 放过.mp3')
 })
 
 var objmulter=multer({dest:'./www/upload'}); // 上传保存路径
