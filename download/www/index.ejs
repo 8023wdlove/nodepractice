@@ -23,8 +23,8 @@
      $('#download').click(function () {
         var that = this;
         var page_url = 'http://localhost:8080/1.txt';
-        var req = new XMLHttpRequest();
-        req.open("get", page_url, true);
+        var xhr = new XMLHttpRequest();
+        xhr.open("get", page_url, true);
         //监听进度事件
         // req.addEventListener("progress", function (evt) {
         //     if (evt.lengthComputable) {
@@ -34,50 +34,50 @@
         //         $("#progressing").html((Math.floor(percentComplete * 100)) + "%");
         //     }
         // }, false);  
-        req.onprogress = function(evt){  // 进度事件
+        xhr.onprogress = function(evt){  // 进度事件
             if (evt.lengthComputable) {
                 var percentComplete = evt.loaded / evt.total;
                 $("#progressing").width((Math.floor(percentComplete * 100)) + "%");
                 $("#progressing").html((Math.floor(percentComplete * 100)) + "%");
             }
     };
-        req.responseType = "blob";
-        req.onreadystatechange = function () {
-            if (req.readyState === 4 && req.status === 200) {
+        xhr.responseType = "blob";
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
                 var filename = $(that).data('filename');
                 if (typeof window.chrome !== 'undefined') {
                     // Chrome version
                     var link = document.createElement('a');
-                    link.href = window.URL.createObjectURL(req.response);
+                    link.href = window.URL.createObjectURL(xhr.response);
                     link.download = filename;
                     link.click();
                 } else if (typeof window.navigator.msSaveBlob !== 'undefined') {
                     // IE version
-                    var blob = new Blob([req.response], { type: 'application/force-download' });
+                    var blob = new Blob([xhr.response], { type: 'application/force-download' });
                     window.navigator.msSaveBlob(blob, filename);
                 } else {
                     // Firefox version
-                    var file = new File([req.response], filename, { type: 'application/force-download' });
+                    var file = new File([xhr.response], filename, { type: 'application/force-download' });
                     window.open(URL.createObjectURL(file));
                 }
             }
         };
-        req.send();
+        xhr.send();
     });
     $('#upload').click(()=>{
         let files = Array.from(document.getElementsByName('file1'));
         let page_url = 'http://localhost:8080/upload';
-        var req = new XMLHttpRequest();
-        req.upload.onerror=()=>{
+        var xhr = new XMLHttpRequest();
+        xhr.upload.onerror=()=>{
             alert('上传出错')
         }
-        req.upload.onprogress=(evt)=>{
+        xhr.upload.onprogress=(evt)=>{
             var percentComplete1 = evt.loaded / evt.total;
             $("#progressing").width((Math.floor(percentComplete1 * 100)) + "%");
             $("#progressing").html((Math.floor(percentComplete1 * 100)) + "%");
 
         }
-        req.open("post", page_url, true);
+        xhr.open("post", page_url, true);
         //监听进度事件
         let formData = new FormData();
         files.forEach(oFile=>{
@@ -85,10 +85,10 @@
                 formData.append('file1',item);
             })
         })
-        req.send(formData);
-        req.onreadystatechange=()=>{
-            if(req.readyState === 4){
-                alert(req.status);
+        xhr.send(formData);
+        xhr.onreadystatechange=()=>{
+            if(xhr.readyState === 4){
+                alert(xhr.status);
             }
         }
 
