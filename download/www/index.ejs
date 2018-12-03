@@ -37,7 +37,6 @@
         req.onprogress = function(evt){  // 进度事件
             if (evt.lengthComputable) {
                 var percentComplete = evt.loaded / evt.total;
-                console.log(percentComplete);
                 $("#progressing").width((Math.floor(percentComplete * 100)) + "%");
                 $("#progressing").html((Math.floor(percentComplete * 100)) + "%");
             }
