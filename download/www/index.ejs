@@ -74,7 +74,6 @@
         }
         req.upload.onprogress=(evt)=>{
             var percentComplete1 = evt.loaded / evt.total;
-            console.log(percentComplete1);
             $("#progressing").width((Math.floor(percentComplete1 * 100)) + "%");
             $("#progressing").html((Math.floor(percentComplete1 * 100)) + "%");
 
