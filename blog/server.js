@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');// 只能解析数据类 的post
 const multer = require('multer'); // 解析文件上传
 const ejs = require('ejs');
 const consolidate = require('consolidate');
+const mysql = require('mysql');
 
 var server = express();
 
@@ -33,7 +34,6 @@ server.listen(8080)
   server.set('views','./views')
   // 3、输出什么东西
   server.set('view engine','html');
-  server.set('view engine','excel');
   server.get('/index',(req,res)=>{
     //   if(req.session)
       res.render('1.ejs', {name:'王冬冬'})
