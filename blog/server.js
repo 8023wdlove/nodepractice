@@ -34,9 +34,9 @@ server.listen(8080)
   server.set('views','./views')
   // 3、输出什么东西
   server.set('view engine','html');
-  server.get('/index',(req,res)=>{
+  server.get('/',(req,res)=>{
     //   if(req.session)
-      res.render('1.ejs', {name:'王冬冬'})
+      res.render('index.ejs', {})
   })
 
 
