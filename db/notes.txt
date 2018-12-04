@@ -1,9 +1,13 @@
-1、下载mysql模块（client）
+1、下载mysql模块（client）  npm install mysql
 2、连接
     var db = mysql.createConnection({host, port, user, password,database});
 3、查询
     db.query(SQL, (err, data)=>{})
 4、SQL语句
+    关键字大写
     增删改查
     INSERT INTO 表 （字段列表） VALUES(值列表)
-    INSERT INTO users(ID,username,password)
+    INSERT INTO users(`ID`,`username`,`password`) VALUES(0,'wangdongdong','22222222')
+
+    SELECT 什么 FROM 表
+    SELECT * FROM `users`
