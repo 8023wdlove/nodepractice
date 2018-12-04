@@ -5,3 +5,5 @@
     db.query(SQL, (err, data)=>{})
 4、SQL语句
     增删改查
+    INSERT INTO 表 （字段列表） VALUES(值列表)
+    INSERT INTO users(ID,username,password)
