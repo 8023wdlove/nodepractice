@@ -16,6 +16,7 @@ export default {
     txt1 () {
       console.log(77)
       this.$.get('/api', {}, (data) => {
+        console.log(333)
         this.txt = data
         console.log(this.txt, 8888)
       })
