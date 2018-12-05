@@ -14,11 +14,9 @@ export default {
   },
   methods: {
     txt1 () {
-      console.log(77)
-      this.$.get('/api', {}, (data) => {
-        console.log(333)
-        this.txt = data
-        console.log(this.txt, 8888)
+      this.$.get('/api').then((data) => {
+        console.log(data)
+        this.txt = data.data
       })
     }
   }
