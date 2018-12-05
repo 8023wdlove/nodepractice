@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    {{txt}}
+    <button @click="txt1()">测试测试测试</button>
+    <div>{{txt}}</div>
   </div>
 </template>
 <script>
@@ -11,10 +12,14 @@ export default {
       txt: ''
     }
   },
-  created () {
-    this.$.get('http://api/localhost:8080', (data) => {
-      this.txt = data
-    })
+  methods: {
+    txt1 () {
+      console.log(77)
+      this.$.get('/api', {}, (data) => {
+        this.txt = data
+        console.log(this.txt, 8888)
+      })
+    }
   }
 }
 </script>
