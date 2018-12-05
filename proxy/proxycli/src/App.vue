@@ -1,13 +1,21 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    {{txt}}
   </div>
 </template>
-
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data () {
+    return {
+      txt: ''
+    }
+  },
+  created () {
+    this.$.get('http://api/localhost:8080', (data) => {
+      this.txt = data
+    })
+  }
 }
 </script>
 
