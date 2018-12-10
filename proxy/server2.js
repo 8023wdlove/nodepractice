@@ -10,7 +10,10 @@ app.get("/api",(req,res)=>{
           res.status(500).send('database error').end();
         }else {
           res.setHeader("Cache-Control", "no-store");
-          res.send(data);
+          let obj = {success:true};
+          obj.data = data;
+          console.log(data)
+          res.status(200).send(obj);
           // res.render('index.ejs', {banners: data})
         }
     })
