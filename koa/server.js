@@ -1,0 +1,9 @@
+const koa = require('koa')
+const app = new koa();
+
+
+app.use(async ctx=>{
+    ctx.body = 'hello word'
+});
+
+app.listen(3000)
