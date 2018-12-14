@@ -12,15 +12,15 @@ var server = express();
 
 server.listen(8080)
 
-// 1解析cookie
+// 1、解析cookie
   server.use(cookieParser('wthguihh')); 
-  // 2使用session
+  // 2、使用session
   var arr = [];
   for(var i =  0;i<1000000;i++){
       arr.push("keys"+Math.random());
   }
   server.use(cookieSession({name:'user',keys:arr,maxAge:20*3600*1000}));
-  // 3post数据
+  // 3、post数据
   server.use(bodyParser.urlencoded({extended:false})); // 解析post 请求
   server.use(multer({dest:'./www/upload'}).any())
   // 用户请求
