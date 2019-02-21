@@ -1,0 +1,22 @@
+1.1 开发环境
+Koa 依赖 node v7.6.0 或 ES2015及更高版本和 async 方法支持，你可以使用自己喜欢的版本管理器快速安装支持的 node 版本
+
+$ node -v
+v8.9.1
+如果你的版本号小于v7.6.0,请自行升级。如使用nvm
+
+在确认好环境后，我们就可以新建一个项目，在里面自由操练了
+
+$ mkdir KoaTutorial && cd KoaTutorial
+
+$ npm i koa --save
+1.2 必修的 hello world 应用:
+const Koa = require('koa');
+const app = new Koa();
+
+app.use(async ctx => {
+  ctx.body = 'Hello World';
+});
+
+app.listen(3000);
+打开浏览器，访问 http://localhost:3000/，你会看到那可爱的Hello World。就是这么简单的几行代码，我们就起了一个HTTP服务，

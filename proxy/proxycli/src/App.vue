@@ -16,7 +16,7 @@ export default {
     txt1 () {
       this.$.get('/api').then((data) => {
         console.log(data)
-        this.txt = data.data
+        this.txt = data
       })
     }
   }
